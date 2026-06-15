@@ -21,7 +21,6 @@ jobs:
         uses: zaproxy/action-baseline@v0.15.0
         with:
           target: "https://mitsumori-pocket.onrender.com"
-          rules_file_name: ".zap/rules.tsv"
           cmd_options: "-a"
           allow_issue_writing: true
           fail_action: false
