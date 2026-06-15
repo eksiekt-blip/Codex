@@ -1,0 +1,27 @@
+name: Weekly security scan
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/security-scan.yml"
+  schedule:
+    - cron: "17 18 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  zap-baseline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: OWASP ZAP baseline scan
+        uses: zaproxy/action-baseline@v0.15.0
+        with:
+          target: "https://mitsumori-pocket.onrender.com"
+          rules_file_name: ".zap/rules.tsv"
+          cmd_options: "-a"
+          allow_issue_writing: true
+          fail_action: false
