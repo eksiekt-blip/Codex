@@ -1,0 +1,11 @@
+{
+  "name": "ミツモリポケット",
+  "short_name": "ミツモリ",
+  "description": "現場業者向けの見積もり・顧客・入金管理",
+  "lang": "ja",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f3ea",
+  "theme_color": "#12372a",
+  "icons": [{"src":"/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
