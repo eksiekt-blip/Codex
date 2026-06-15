@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: mitsumori-pocket
+    runtime: docker
+    plan: starter
+    healthCheckPath: /health
+    disk:
+      name: mitsumori-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: DB_PATH
+        value: /data/mitsumori.db
+      - key: COOKIE_SECURE
+        value: "1"
+      - key: STRIPE_PAYMENT_LINK
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
